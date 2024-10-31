@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+    font-family: "Fira Sans Condensed", sans-serif;
+    background-image: url("blockchain.jpeg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+}
+
+.converter {
+    background-color:rgba(0,0,0,0.6);
+    padding: 20px;
+    color: white;
+    margin-top: 150px;
+    width: 400px;
+    border: solid white 1px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px black;
+}
+
+h1 {
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+input{
+    width: 190px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+select {
+    height: 25px;
+    border-radius: 5px;
+    width: 200px;
+
+}
+label{
+    width: 80px;
+    text-align: center;
+}
+button {
+    background-color: rgba(0,0,0,0);
+    color: white;
+    padding: 15px;
+    border-radius: 20px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    border: solid white 1px;
+    transition: 0.5s ease;
+    letter-spacing: 1px;
+}
+button:hover {
+    background-color: #28a745;
+    cursor: pointer;
+}
+
+#result {
+    text-align: center;
+    color:#28a745;
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+footer{
+    width: 100%;
+    background-color: gainsboro;
+    color: black;
+    height: 40vh;
+    margin-top: 100px;
+}
+        .rights{
+            padding:0px;
+            text-align: center;
+        }
+        .media {
+            padding-top:1px ;
+            display: flex;
+            justify-content: center;
+        }
+        .media div{
+            padding: 20px;
+            padding-top: 10px;
+            text-align: center;
+        }
+        .media a{
+            text-decoration: none;
+        }
+        img {
+            width: 35px;
+        }
+        .elements{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="converter">
+        <h1>Currency Converter</h1>
+        <form id="converter-form">
+            <div class="elements">
+                <label for="amount">Amount :</label>
+                <input type="number" id="amount" placeholder="Enter amount">
+            </div>
+            <div class="elements">
+                <label for="from-currency">From :</label>
+                <select id="from-currency">
+                    <option value="USD">USD - United States Dollar</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="GBP">GBP - British Pound</option>
+                    <option value="INR">INR - Indian Rupee</option>
+                    <option value="JPY">JPY - Japanese Yen</option>
+                    <option value="AUD">AUD - Australian Dollar</option>
+                    <option value="CAD">CAD - Canadian Dollar</option>
+                    <option value="CHF">CHF - Swiss Franc</option>
+                    <option value="CNY">CNY - Chinese Yuan</option>
+                    <option value="NZD">NZD - New Zealand Dollar</option>
+                    <option value="SGD">SGD - Singapore Dollar</option>
+                    <option value="HKD">HKD - Hong Kong Dollar</option>
+                    <option value="MXN">MXN - Mexican Peso</option>
+                    <option value="ZAR">ZAR - South African Rand</option>
+                    <option value="SEK">SEK - Swedish Krona</option>
+                    <option value="NOK">NOK - Norwegian Krone</option>
+                    <option value="DKK">DKK - Danish Krone</option>
+                    <option value="RUB">RUB - Russian Ruble</option>
+                    <option value="THB">THB - Thai Baht</option>
+                    <option value="AED">AED - United Arab Emirates Dirham</option>
+                    <option value="PLN">PLN - Polish Zloty</option>
+                </select>
+            </div>
+            <div class="elements">
+                <label for="to-currency">To :</label>
+                <select id="to-currency">
+                    <option value="USD">USD - United States Dollar</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="GBP">GBP - British Pound</option>
+                    <option value="INR">INR - Indian Rupee</option>
+                    <option value="JPY">JPY - Japanese Yen</option>
+                    <option value="AUD">AUD - Australian Dollar</option>
+                    <option value="CAD">CAD - Canadian Dollar</option>
+                    <option value="CHF">CHF - Swiss Franc</option>
+                    <option value="CNY">CNY - Chinese Yuan</option>
+                    <option value="NZD">NZD - New Zealand Dollar</option>
+                    <option value="SGD">SGD - Singapore Dollar</option>
+                    <option value="HKD">HKD - Hong Kong Dollar</option>
+                    <option value="MXN">MXN - Mexican Peso</option>
+                    <option value="ZAR">ZAR - South African Rand</option>
+                    <option value="SEK">SEK - Swedish Krona</option>
+                    <option value="NOK">NOK - Norwegian Krone</option>
+                    <option value="DKK">DKK - Danish Krone</option>
+                    <option value="RUB">RUB - Russian Ruble</option>
+                    <option value="THB">THB - Thai Baht</option>
+                    <option value="AED">AED - United Arab Emirates Dirham</option>
+                    <option value="PLN">PLN - Polish Zloty</option>
+                </select>
+            </div>
+            <button type="submit">Convert</button>
+        </form>
+        <h2 id="result"></h2>
+    </div>
+    <footer>
+        <div class="rights">
+            <p>Report bugs at : currencyconverter@gmail.com</p>
+            <p>Follow us</p>
+        </div>
+        <div class="media">
+        <div>
+            <img src="instagram.png" alt="">
+            <p><a href="">Instagram</a></p>
+        </div>
+        <div><img src="youtube.png" alt="">
+            <p><a href="">YouTube</a></p>
+        </div>
+        <div><img src="twitter.png" alt="">
+            <p><a href="">Twitter</a></p>
+        </div>
+        </div>
+</footer>
+
+
+</body>
+
+</html>
